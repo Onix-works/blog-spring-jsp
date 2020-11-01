@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:spring="http://www.springframework.org/tags"
+     xmlns:sec="http://www.springframework.org/security/tags"
+     version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    
+    <spring:message code="label_blog_list" var="labelBlogList"/>
+    <spring:message code="label_blog_name" var="labelBlogName"/>
+    <spring:message code="label_blog_update" var="labelBlogUpdate"/>
+    <spring:message code="new_post" var="newPost"/>
+    <spring:message code="delete_blog" var="deleteBlog"/>
+    <spring:url value="/blogs" var="editBlogUrl"/>
+    <spring:url value="/posts" var="editPostUrl"/>
+    
+    <div id="show">
+      <div id="side">      
+        <img src="${editBlogUrl}/photo/${blog.id}"></img>
+        
+        <sec:authorize access="isAuthenticated()">
+        <a href="${editBlogUrl}/${blog.id}?form">
+        <h3>${labelBlogUpdate}</h3>
+        </a>      
+        <a href="${editBlogUrl}/${blog.id}?post">
+        <h3>${newPost}</h3>
+        </a>
+        <a href="${editBlogUrl}/${blog.id}?del">
+        <h3>${deleteBlog}</h3>
+        </a>
+        </sec:authorize>
+      </div>
+    
+    <div id="content">
+    <c:if test="${not empty blog}">    
+    <h1>
+      ${blog.name}
+    </h1>    
+    <c:forEach items="${blog.posts}" var="post"> 
+      <dl> 
+        <dt>
+          <a href="${editPostUrl}/${post.id}">
+          <h4 >${post.name}</h4>
+          </a>
+        </dt>
+        <dd id="posts">
+          ${post.btext} 
+        </dd>
+      </dl> 
+    </c:forEach>     
+    </c:if>
+    </div>
+    </div>
+</div>

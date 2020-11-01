@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:spring="http://www.springframework.org/tags"
+     xmlns:sec="http://www.springframework.org/security/tags"
+     version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    
+    <spring:message code="label_blog_list" var="labelBlogList"/>
+    <spring:message code="label_blog_name" var="labelBlogName"/>
+    <spring:message code="comments" var="labelComments"/>
+    <spring:message code="add_comment" var="addComment"/>
+    <spring:message code="delete_post" var="deletePost"/>
+    <spring:message code="edit_post" var="editPost"/>
+    <spring:url value="/posts" var="editPostUrl"/>
+    <spring:url value="/blogs" var="editBlogUrl"/>
+    <spring:url value="/posts/comm" var="editCommentUrl"/>
+    
+    
+    <div id="show">
+      
+    <div id="content">
+    <c:if test="${not empty post}">
+    <h1>${post.name}</h1>
+ 
+     <dl id="post"> 
+        <dt><h4>${post.name}</h4></dt>
+        <dd><p>${post.btext}</p></dd>
+     </dl>  
+     <h2>${labelComments}</h2>
+     <c:forEach items="${post.comments}" var="comment">        
+     <dl id="comment"> 
+        <dt><h5>${comment.userName}</h5></dt>
+        <dd>${comment.text}</dd>
+     </dl>  
+     </c:forEach>
+     </c:if>
+     </div>
+     
+      <div id="sidepost">
+        <a href="${editBlogUrl}/${post.blog.id}">
+        <h4>${post.blog.name}</h4>
+        </a>
+        <img src="${editBlogUrl}/photo/${post.blog.id}"></img>
+        <sec:authorize access="isAuthenticated()">
+        <a href="${editPostUrl}/${post.getId()}?post"><h3>${editPost}</h3></a>
+        <a href="${editPostUrl}/${post.getId()}?del"><h3>${deletePost}</h3></a>
+        <a href="${editCommentUrl}/${post.getId()}?comm"><h3>${addComment}</h3></a>
+        </sec:authorize>
+      </div>
+      
+     </div>
+</div>

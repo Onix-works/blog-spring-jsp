@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security.xsd">
+
+    
+    <http use-expressions="true">
+    <csrf disabled="true"/>
+        <intercept-url pattern='/**' access='permitAll' requires-channel="http"/>
+        <form-login login-page="/blogs" authentication-failure-url="/security/loginfail"
+                    default-target-url="/blogs"/>
+        <logout logout-success-url="/blogs"/>
+        </http>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref='myUserDetailsService'>
+        <password-encoder ref="encoder" />
+        </authentication-provider>
+              
+    </authentication-manager>
+    
+    <beans:bean id="encoder"
+    class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+    </beans:bean>
+    
+   
+    
+  
+    
+</beans:beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <definition extends="default" name="posts/show">
+        <put-attribute name="body" value="/WEB-INF/views/posts/show.jspx" /> 
+    </definition>
+    <definition extends="default" name="posts/update">
+        <put-attribute name="body" value="/WEB-INF/views/posts/edit.jspx" /> 
+    </definition>
+    <definition extends="default" name="posts/createcomment">
+        <put-attribute name="body" value="/WEB-INF/views/posts/editcomment.jspx" /> 
+    </definition>
+   
+</tiles-definitions>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:spring="http://www.springframework.org/tags"
+     xmlns:form="http://www.springframework.org/tags/form"
+     version="2.0">
+     
+     <script>
+     $(function(){
+     $("#text").ckeditor(
+             {
+                 toolbar : 'Basic',
+                 uiColor : '#CCCCCC'
+             }
+     );
+     });
+    </script>
+
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+
+    <spring:message code="label_blog_new" var="labelBlogNew"/>
+    <spring:message code="label_blog_update" var="labelBlogUpdate"/>
+    <spring:message code="label_blog_name" var="labelBlogName"/>
+    <spring:message code="save" var="save"/>
+    <spring:message code="reset" var="reset"/>
+    <spring:message code="comment_text" var="commentText"/>
+    <spring:message code="post_name" var="postName"/>
+
+    <h3>${comment.post.name}</h3>
+    <div id="postUpdate">
+        <form:form modelAttribute="comment" id="postUpdateForm" method="POST"
+        enctype="form-data">
+
+        <c:if test="${not empty message}">
+                <div id="message" class="${message.type}">${message.message}</div>
+            </c:if>
+
+            <form:hidden path="post" />
+            <form:hidden path="post.id" />
+            <form:hidden path="id" />
+
+            <form:label path="text">
+                ${commentText}*
+            </form:label>
+            <form:textarea  path="text" rows="4" cols="50"/>
+            <br/>
+            
+
+            <button type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+                <span class="ui-button-text">${Save}</span>
+            </button>
+            <button type="reset" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+                <span class="ui-button-text">${Reset}</span>
+            </button>
+        </form:form>
+    </div>
+</div>

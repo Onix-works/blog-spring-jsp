@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition extends="default" name="blogs/list">
+        <put-attribute name="body" value="/WEB-INF/views/blogs/list.jspx" /> 
+    </definition>
+    <definition extends="default" name="blogs/show">
+        <put-attribute name="body" value="/WEB-INF/views/blogs/show.jspx" /> 
+    </definition>
+    <definition extends="default" name="blogs/update">
+        <put-attribute name="body" value="/WEB-INF/views/blogs/edit.jspx" /> 
+    </definition>
+    <definition extends="default" name="blogs/create">
+        <put-attribute name="body" value="/WEB-INF/views/blogs/edit.jspx" /> 
+    </definition>
+    <definition extends="default" name="blogs/createpost">
+        <put-attribute name="body" value="/WEB-INF/views/posts/edit.jspx" /> 
+    </definition>
+    <definition extends="default" name="registration">
+        <put-attribute name="body" value="/WEB-INF/views/blogs/registration.jspx" /> 
+    </definition>
+     <definition extends="default" name="blogs/search">
+        <put-attribute name="body" value="/WEB-INF/views/blogs/search.jspx" /> 
+    </definition>
+
+   
+</tiles-definitions>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:spring="http://www.springframework.org/tags"
+     xmlns:form="http://www.springframework.org/tags/form"
+     version="2.0">
+     
+     <script>
+     $(function(){
+     $("#btext").ckeditor(
+             {
+                 toolbar : 'Basic',
+                 uiColor : '#CCCCCC'
+             }
+     );
+     });
+    </script>
+
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+
+    <spring:message code="label_blog_new" var="labelBlogNew"/>
+    <spring:message code="label_blog_update" var="labelBlogUpdate"/>
+    <spring:message code="label_blog_name" var="labelBlogName"/>
+    <spring:message code="post_name" var="postName"/>
+    <spring:message code="post_text" var="postText"/>
+    <spring:message code="save" var="save"/>
+    <spring:message code="reset" var="reset"/>
+
+    
+
+    <div id="postUpdate">
+        <form:form modelAttribute="post" id="postUpdateForm" method="POST"
+        enctype="form-data">
+
+        <c:if test="${not empty message}">
+                <div id="message" class="${message.type}">${message.message}</div>
+            </c:if>
+
+            <form:label path="name">
+               ${postName}*
+            </form:label>
+            <form:input path="name" />
+            <form:hidden path="id" />
+            <form:hidden path="blog" />
+            <form:hidden path="blog.id" />
+            <form:hidden path="blog.name" />
+            <div>
+                <form:errors path="name" cssClass="error" />
+            </div>
+            <form:label path="btext">
+                ${postText}*
+            </form:label>
+            <form:textarea  path="btext" rows="9" cols="70"/>
+            <br/>
+            
+
+            <button type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+                <span class="ui-button-text">${save}</span>
+            </button>
+            <button type="reset" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+                <span class="ui-button-text">${reset}</span>
+            </button>
+        </form:form>
+    </div>
+</div>

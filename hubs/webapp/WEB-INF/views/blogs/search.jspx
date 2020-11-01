@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:spring="http://www.springframework.org/tags"
+     version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    
+     
+    
+
+
+    
+    
+    <spring:message code="label_blog_list" var="labelBlogList"/>
+    <spring:message code="label_blog_name" var="labelBlogName"/>
+    <spring:url value="/blogs" var="showBlogUrl"/> 
+    <script type="text/javascript">
+     
+        $(document).ready(function(){
+        
+           $("#searchlist").jqGrid({
+            	url:'${showBlogUrl}/search?search=${search}',
+                datatype: 'json',
+                mtype: 'GET',
+                colNames:['${labelBlogName}'],
+                colModel :[
+                    {name:'name', index:'name', width:150}
+                ],
+                jsonReader : {
+                    root:"blogData",
+                    page: "currentPage",
+                    total: "totalPages",
+                    records: "totalRecords",
+                    repeatitems: false,
+                    id:"id"
+
+                },
+                pager: 'searchpager',
+                rowNum:10,
+                rowList:[10,20,30],
+                sortname: 'name',
+                sortorder: 'asc',
+                viewrecords: true,
+                gridview: true,
+                height: 250,
+                width: 500,
+                caption: '${labelBlogList}',
+                onSelectRow: function(id){
+                    document.location.href ="${showBlogUrl}/" + id;
+                }
+            });
+           
+            
+        });
+    </script>
+    
+     <form id="searchForm" method="GET">
+  
+            <tr>
+            <td>Search blog</td>
+            <td><input type="text" name="search"/></td>
+            
+            </tr>
+   </form>
+  
+   
+    <h2>${labelBlogList}</h2>
+    
+    <c:if test="${not empty message}">
+        <div id="message" class="${message.type}">${message.message}</div>
+    </c:if>
+    <div>
+    <caption align="center">Login:</caption>
+    <table id="searchlist">
+                    
+                    <tr>
+                        <td>User Name:</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                       
+                    </tr>
+                   
+                   
+                </table>
+        
+        </div>
+        
+    <div id="searchpager"></div>      
+     </div>
