@@ -106,13 +106,13 @@ public class BlogController {
 		    logger.info("Updating blog");	        
 	        if (bindingResult.hasErrors()) {
 	            uiModel.addAttribute("message", new Message("error",
-	                    messageSource.getMessage("blog_save_fail", new Object[]{}, locale)));
+	                    messageSource.getMessage("save_fail", new Object[]{}, locale)));
 	            uiModel.addAttribute("blog", blog);
 	            return "blogs/update";
 	        }
 	        uiModel.asMap().clear();
 	        redirectAttributes.addFlashAttribute("message", new Message("success",
-	                messageSource.getMessage("blog_save_success", new Object[]{}, locale)));
+	                messageSource.getMessage("save_success", new Object[]{}, locale)));
 	        if (file != null) {
 	            logger.info("File name: " + file.getName());
 	            logger.info("File size: " + file.getSize());
@@ -158,13 +158,13 @@ public class BlogController {
 	        logger.info("Creating blog");
 	        if (bindingResult.hasErrors()) {
 	            uiModel.addAttribute("message", new Message("error",
-	                    messageSource.getMessage("contact_save_fail", new Object[]{}, locale)));
+	                    messageSource.getMessage("save_fail", new Object[]{}, locale)));
 	            uiModel.addAttribute("blog", blog);
 	            return "blogs/create";
 	        }	      
 	        uiModel.asMap().clear();
 	        redirectAttributes.addFlashAttribute("message", new Message("success",
-	                messageSource.getMessage("contact_save_success", new Object[]{}, locale)));
+	                messageSource.getMessage("save_success", new Object[]{}, locale)));
 	        
 	        if (file != null) {
 	            logger.info("File name: " + file.getName());
@@ -222,13 +222,13 @@ public class BlogController {
 	        logger.info("Creating post");
 	        if (bindingResult.hasErrors()) {
 	            uiModel.addAttribute("message", new Message("error",
-	                    messageSource.getMessage("contact_save_fail", new Object[]{}, locale)));
+	                    messageSource.getMessage("save_fail", new Object[]{}, locale)));
 	            uiModel.addAttribute("post", post);
 	            return "blogs/createpost";
 	        }	      
 	        uiModel.asMap().clear();
 	        redirectAttributes.addFlashAttribute("message", new Message("success",
-	                messageSource.getMessage("contact_save_success", new Object[]{}, locale)));
+	                messageSource.getMessage("save_success", new Object[]{}, locale)));
 
 	        Blog blog = blogService.findBlogById(blogid);
 	        post.setBlog(blog);
@@ -376,7 +376,7 @@ public class BlogController {
 	    	
 	    	 if (bindingResult.hasErrors()) {
 		            uiModel.addAttribute("message", new Message("error",
-		                    messageSource.getMessage("contact_save_fail", new Object[]{}, locale)));
+		                    messageSource.getMessage("save_fail", new Object[]{}, locale)));
 		            uiModel.addAttribute("userDto", userDto);
 		            return "registration";
 		        }

@@ -19,7 +19,7 @@
     <spring:message code="matching_password" var="matchingPassword"/>
     
     <div id="registration">
-        <form:form modelAttribute="user" id="registrationForm" method="POST">
+        <form:form modelAttribute="userDto" id="registrationForm" method="POST">
 
         <c:if test="${not empty message}">
                 <div id="message" class="${message.type}">${message.message}</div>

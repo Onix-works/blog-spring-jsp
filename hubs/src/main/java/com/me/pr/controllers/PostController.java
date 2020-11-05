@@ -72,7 +72,7 @@ public class PostController {
 	   logger.info("Creating comment");
        uiModel.asMap().clear();
        redirectAttributes.addFlashAttribute("message", new Message("success",
-               messageSource.getMessage("contact_save_success", new Object[]{}, locale)));
+               messageSource.getMessage("save_success", new Object[]{}, locale)));
 
        Post post = blogService.findPostById(postid);
        comment.setPost(post);
@@ -98,13 +98,13 @@ public class PostController {
 	        logger.info("Updating post");	        
 	        if (bindingResult.hasErrors()) {
 	            uiModel.addAttribute("message", new Message("error",
-	                    messageSource.getMessage("blog_save_fail", new Object[]{}, locale)));
+	                    messageSource.getMessage("save_fail", new Object[]{}, locale)));
 	            uiModel.addAttribute("post", post);
 	            return "posts/update";
 	        }	        
 	        uiModel.asMap().clear();  
 	        redirectAttributes.addFlashAttribute("message", new Message("success",
-	                messageSource.getMessage("blog_save_success", new Object[]{}, locale)));	
+	                messageSource.getMessage("save_success", new Object[]{}, locale)));	
 	        post = blogService.savePost(post);	       
 	        return "redirect:/posts/" + UrlUtil.encodeUrlPathSegment(post.getId().toString(),
 	                httpServletRequest);

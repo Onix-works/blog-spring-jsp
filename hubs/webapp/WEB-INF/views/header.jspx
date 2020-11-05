@@ -13,7 +13,6 @@
     <spring:url var="logoutUrl" value="/logout" />
     <spring:url value="/blogs/registration" var="registerUrl"/>
     
-    
     <div id="appname">
        <h1 href="${homeUrl}">${headerText}</h1>
     </div>
@@ -30,7 +29,5 @@
             <a href="${logoutUrl}">${labelLogout}</a>
         </sec:authorize>
     </div>
-
-  
 
 </div>

@@ -49,10 +49,10 @@
             
 
             <button type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
-                <span class="ui-button-text">${Save}</span>
+                <span class="ui-button-text">${save}</span>
             </button>
             <button type="reset" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
-                <span class="ui-button-text">${Reset}</span>
+                <span class="ui-button-text">${reset}</span>
             </button>
         </form:form>
     </div>
