@@ -10,7 +10,7 @@
 - Localization 
 - Text editor attachment
 - Integration tests
-## Main technologies used
+### Main technologies used
 - Java 14
 - Tomcat
 - Maven
@@ -21,11 +21,11 @@
 - JavaScript
 - jQuery
 - JUnit 
-## Secondary tools
+### Secondary tools
 Querydsl, Javax Validation API, CKEditor, Apache Tiles, jQuery UI, jqGrid, slf4j, fasterxml jackson
-## Authentication
+### Authentication
 Existing user: username-"me@me.ru", password-"user"
-## Deployment
+### Deployment
 Accessible at http://localhost:8080/hubs.
 Needs to be deployed from a server in war package(or from IDE)
 
