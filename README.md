@@ -26,7 +26,7 @@ Querydsl, Javax Validation API, CKEditor, Apache Tiles, jQuery UI, jqGrid, slf4j
 ## Authentication
 Existing user: username-"me@me.ru", password-"user"
 ## Deployment
-Accessible at http://localhost:8080/hubs
+Accessible at http://localhost:8080/hubs.
 Needs to be deployed from a server in war package(or from IDE)
 
  
