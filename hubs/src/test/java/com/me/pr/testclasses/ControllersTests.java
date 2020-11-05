@@ -3,6 +3,7 @@ package com.me.pr.testclasses;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -72,9 +73,9 @@ public class ControllersTests {
 	public void webApplicationContextgetBeanTest() {
 		ServletContext servletContext = wac.getServletContext();
 
-		Assert.assertNotNull(servletContext);
-		Assert.assertTrue(servletContext instanceof MockServletContext);
-		Assert.assertNotNull(wac.getBean("transactionManager"));
+		assertNotNull(servletContext);
+		assertTrue(servletContext instanceof MockServletContext);
+		assertNotNull(wac.getBean("transactionManager"));
 	}
 
 	@Test
