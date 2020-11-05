@@ -1,5 +1,5 @@
 # hubs
-https://user-images.githubusercontent.com/61627180/98284229-de0d0600-1fb1-11eb-9a05-9fa5f197d3c4.PNG
+<img width="746" alt="Снимок" src="https://user-images.githubusercontent.com/61627180/98284229-de0d0600-1fb1-11eb-9a05-9fa5f197d3c4.PNG">
 ### A blog site with following features:
 - Blogs posts and comments with CRUD operations
 - Form-based authentication
