@@ -1,7 +1,7 @@
 # hubs
 
 ### A blog site with following features:
-- Blogs posts and comments with CRUD operations
+- Blogs, posts and comments with CRUD operations
 - Form-based authentication
 - User registration
 - Field validation
