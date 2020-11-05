@@ -23,6 +23,9 @@
 - JUnit 
 ## Secondary tools
 Querydsl, Javax Validation API, CKEditor, Apache Tiles, jQuery UI, jqGrid, slf4j, fasterxml jackson
+## Authentication
+Existing user: username-"me@me.ru", password-"user"
 ## Deployment
 Needs to be deployed from a server in war package(or from IDE)
+
  
