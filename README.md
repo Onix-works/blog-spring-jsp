@@ -1,5 +1,5 @@
 # hubs
-## A blog site with following features:
+### A blog site with following features:
 - Blogs posts and comments with CRUD operations
 - Form-based authentication
 - User registration
