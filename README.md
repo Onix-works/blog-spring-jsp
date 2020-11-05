@@ -29,6 +29,7 @@ Existing user: username-"me@me.ru", password-"user"
 ### Deployment
 Accessible at http://localhost:8080/hubs.
 Needs to be deployed from a server in war package(or from IDE)
-<img width="746" alt="Снимок" src="https://user-images.githubusercontent.com/61627180/98284229-de0d0600-1fb1-11eb-9a05-9fa5f197d3c4.PNG">
+
+<img width="856" alt="Снимок" src="https://user-images.githubusercontent.com/61627180/98285182-3c86b400-1fb3-11eb-8ea1-478201e901bb.PNG">
 
  
