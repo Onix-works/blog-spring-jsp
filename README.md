@@ -18,12 +18,13 @@
 - SQL(MySQL, H2)
 - JPA(Hibernate)
 - Spring (Core, MVC, Data, Security, Test)
+- HTML, CSS
 - JSP
 - JavaScript
 - jQuery
 - JUnit 
 ### Secondary tools
-Querydsl, Javax Validation API, CKEditor, Apache Tiles, jQuery UI, jqGrid, slf4j, fasterxml jackson
+Querydsl, Javax Validation API, CKEditor, Apache Tiles, jQuery UI, jqGrid, slf4j, fasterxml jackson, XML
 ### Authentication
 Existing user: username-"me@me.ru", password-"user"
 ### Deployment
